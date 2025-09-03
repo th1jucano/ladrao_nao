@@ -5,7 +5,9 @@
 #define rele2 3
 #define buzzer 7
 
-Ultrasonic ultrasom(10,11);
+Ultrasonic ultrasom(10,11); // Trigger e echo                         
+
+
 
 bool state = false;
 int freq = 2600;
