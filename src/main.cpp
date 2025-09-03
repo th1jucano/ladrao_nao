@@ -7,8 +7,6 @@
 
 Ultrasonic ultrasom(10,11); // Trigger e echo                         
 
-
-
 bool state = false;
 int freq = 2600;
 bool toogle = false;
@@ -20,8 +18,6 @@ void setup() {
   pinMode(rele2, OUTPUT);
   digitalWrite(rele1, HIGH);
   digitalWrite(rele2, HIGH);
-  // Remova o tone do setup para não iniciar o buzzer
-  // tone(buzzer, freq);
 }
 
 void loop() {
@@ -30,10 +26,10 @@ void loop() {
 
   if (distancia > 0 && distancia < 70) {
     unsigned long tempoInicio = millis();
-    while (millis() - tempoInicio < 45000) {
+    while (millis() - tempoInicio < 45000) { // millis continua, tempoInicio para
       Serial.println(millis());
       state = !state; // Corrigido
-      digitalWrite(rele1, state ? LOW : HIGH);
+      digitalWrite(rele1, state ? LOW : HIGH); // rele 1 sim? agora não
       digitalWrite(rele2, state ? HIGH : LOW);
       toogle = !toogle; // Corrigido
       freq = toogle ? 700 : 1200;
