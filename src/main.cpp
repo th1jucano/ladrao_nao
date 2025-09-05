@@ -46,7 +46,7 @@ void loop() {
 
     if (distancia > 0 && distancia < 70) {
       unsigned long tempoInicio = millis();
-      while (millis() - tempoInicio < 45000) {
+      while (millis() - tempoInicio < 40000) {
         Serial.println(millis());
         state = !state;
         digitalWrite(rele1, state ? LOW : HIGH);
