@@ -44,9 +44,9 @@ void loop() {
     Serial.print("Distancia: ");
     Serial.println(distancia);
 
-    if (distancia > 0 && distancia < 70) {
+    if (distancia > 0 && distancia < 80) {
       unsigned long tempoInicio = millis();
-      while (millis() - tempoInicio < 40000) {
+      while (millis() - tempoInicio < 42000) {
         Serial.println(millis());
         state = !state;
         digitalWrite(rele1, state ? LOW : HIGH);
@@ -68,5 +68,5 @@ void loop() {
     noTone(buzzer);
   }
 
-  delay(500); // Pequeno delay para evitar sobrecarga
+  delay(150); // Pequeno delay para evitar sobrecarga
 }
